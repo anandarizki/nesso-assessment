@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground-100: #f1f1f1;
+  --foreground-200: #f6f6f6;
+  --foreground-300: #8e8e8e;
+  --foreground-400: #636363;
+  --foreground: #434343;
+  --foreground-900: #2f3042;
+  --accent: #0b5ed7;
+  ---max: #000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-foreground-100: var(--foreground-100);
+  --color-foreground-200: var(--foreground-200);
+  --color-foreground-300: var(--foreground-300);
+  --color-foreground-400: var(--foreground-400);
+  --color-foreground-900: var(--foreground-900);
+  --color-max: var(--max);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Times new Rowman";
+}
+
+.background-grid {
+  background-image: url("/grid-background.svg");
+  background-repeat: no-repeat;
+  background-position: calc(50% + 300px) top;
+}
