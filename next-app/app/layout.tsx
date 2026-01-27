@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     title: "Nesso Digitale",
     description:
       "Soluzioni digitali personalizzate e developer selezionati ottimizzano i processi e fanno crescere il team IT con un referente tecnico italiano.",
-    url: "https://www.nesso-next.rizki.id",
+    url: "https://nesso-next.rizki.id",
     images: [
       {
-        url: "https://www.nesso-next.rizki.id/thumbnail.jpg",
+        url: "https://nesso-next.rizki.id/thumbnail.jpg",
         width: 1200,
         height: 630,
       },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://www.nesso-next.rizki.id/thumbnail.jpg"],
+    images: ["https://nesso-next.rizki.id/thumbnail.jpg"],
   },
 };
 
