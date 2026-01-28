@@ -4,11 +4,17 @@ You are in the `vite-app` folder. This folder contains the project that showcase
 
 **Live demo page: [https://nesso-vite.rizki.id](https://nesso-vite.rizki.id)**
 
-## About the App
+## ⛓️ About the App
 
 This application simulates client-side searching, filtering, and sorting of articles. The main goal is to demonstrate practical patterns used in modern front-end development, including state management, component decomposition, codebase organization, unit testing, and clear separation between business logic and UI.
 
 The project focuses on building realistic features that are commonly required in production applications, while keeping the implementation clean, predictable, and easy to maintain.
+![Screenshot](docs/vite-app.jpg)
+
+### How To Use
+
+- Type keywords into the search input to perform a search
+- Click the filter button to open the filter bar
 
 ### Features
 
@@ -16,7 +22,14 @@ The project focuses on building realistic features that are commonly required in
 - Filter articles by category
 - Filter articles by time range
 - Sort articles by predefined criteria
-- Combine multiple filters without losing the context of existing active filters
+- Combine multiple filters without losing the context of existing active filters or keywords
+
+### Constraints
+
+- The data is statically imported, so it does not simulate data fetching or server-side interactions.
+- The application focuses on functionality; therefore, the visual design is intentionally minimal.
+- The article list is not paginated, as pagination is not a primary focus of this project.
+- There is no functionality to open an article. The focus of this demo is on filtering and searching data.
 
 ## 💻 Installation & Running Locally
 
@@ -51,12 +64,6 @@ npm run dev
 ```
 http://localhost:5173
 ```
-
-## ⛓️ Constraints
-
-- The data is statically imported, so it does not simulate data fetching or server-side interactions.
-- The application focuses on functionality; therefore, the visual design is intentionally minimal.
-- The article list is not paginated, as pagination is not a primary focus of this project.
 
 ## 🛠️ Development Approach
 
