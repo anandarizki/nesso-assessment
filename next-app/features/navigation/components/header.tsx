@@ -19,7 +19,7 @@ export function Header() {
         fontSecondaryClassName,
       )}
     >
-      <Container className="flex gap-2 justify-between items-center px-6 md:px-11">
+      <Container className="flex gap-2 justify-between items-center px-5 md:px-11">
         <CompanyLogo />
         <NavBar className="hidden md:block flex-1 max-w-167.5" />
         <ContactCta className="hidden md:inline-flex lg:px-9" />

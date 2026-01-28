@@ -22,7 +22,7 @@ export function ServiceCard({ href, title, children }: ServiceCardProps) {
           >
             {title}
           </Typography>
-          <IconArrow className="transition-all size-8 -mr-1 opacity-0 group-hover:opacity-100" />
+          <IconArrow className="transition-all size-4 md:size-8 -mr-1 md:opacity-0 group-hover:opacity-100" />
         </CardHeader>
         <CardContent className="flex-1">
           <Typography as="p" size="lg" className="leading-normal">

@@ -16,6 +16,7 @@ export function NavLink({ children, href, className, ...props }: NavLinkProps) {
     <Link
       {...props}
       href={href}
+      aria-current={isActive ? "page" : undefined}
       className={cn(
         "inline-flex items-center relative transition-all hover:text-max text-nowrap",
         className,

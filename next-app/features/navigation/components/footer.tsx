@@ -15,7 +15,7 @@ function GroupTitle({ children }: { children: React.ReactNode }) {
 export function Footer() {
   return (
     <footer className="md:text-sm lg:text-base">
-      <Container className="border-t border-gray-200 py-8 flex flex-col md:flex-row justify-between gap-6  px-6 md:px-11">
+      <Container className="border-t border-gray-200 py-8 flex flex-col md:flex-row justify-between gap-6  px-5 md:px-11">
         <div className="md:col-span-2 max-w-96">
           <CompanyLogo />
           <Typography size="md" className="mt-2 text-left">
