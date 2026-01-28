@@ -1,6 +1,5 @@
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { AboutMedia } from "./components/about-media";
-import { AboutContent } from "./components/about-content";
+import { AboutMedia, AboutContent } from "./components";
 import { aboutData } from "@/utils/mock-data";
 
 export function AboutSection() {

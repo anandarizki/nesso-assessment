@@ -13,7 +13,10 @@ function StatItem({
   title: string;
 }) {
   return (
-    <div className="flex gap-1 text-xs [&_svg]:size-4 text-foreground-300 items-center">
+    <div
+      title={title}
+      className="flex gap-1 text-xs [&_svg]:size-4 text-foreground-300 items-center"
+    >
       {children}
     </div>
   );
