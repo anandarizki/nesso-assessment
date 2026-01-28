@@ -3,12 +3,12 @@ import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const fontDefault = Plus_Jakarta_Sans({
-  weight: ["300", "400", "500", "600", "800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
 });
 
 const fontSecondary = Poppins({
-  weight: ["400"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
 });
 
