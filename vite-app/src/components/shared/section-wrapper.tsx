@@ -16,16 +16,16 @@ function SectionWrapperOuter({
   );
 }
 
-function SectionTitle({ title }: { title: string }) {
+function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <Typography
       as="h2"
       size="xxl"
       weight="bold"
       color="max"
-      className="max-w-175"
+      className="max-w-175 relative"
     >
-      {title}
+      {children}
       <span className="absolute block w-full max-w-43 -ml-1.5 top-8 h-1.5 bg-accent" />
     </Typography>
   );
@@ -53,7 +53,7 @@ function SectionWrapper({
       <Container className="relative">
         {(title || description) && (
           <div className="mb-8 flex flex-col md:flex-row gap-6 items-start justify-between">
-            {title && <SectionTitle title={title} />}
+            {title && <SectionTitle>{title}</SectionTitle>}
             {description && (
               <p className="md:max-w-104 lg:text-xl -mt-1 leading-normal">
                 {description}
@@ -67,4 +67,4 @@ function SectionWrapper({
   );
 }
 
-export { SectionWrapper, SectionWrapperOuter };
+export { SectionWrapper, SectionWrapperOuter, SectionTitle };

@@ -12,6 +12,7 @@ const cardVariants = cva(
       size: {
         default: "rounded-[30px]",
         sm: "rounded-3xl",
+        xs: "rounded-lg",
       },
       theme: {
         default: null,
@@ -24,6 +25,11 @@ const cardVariants = cva(
         variant: "outline",
         theme: "accent",
         className: "border-accent",
+      },
+      {
+        variant: "outline",
+        theme: "gray",
+        className: "border-foreground-200",
       },
       {
         variant: "default",
@@ -68,9 +74,14 @@ function Card({
   );
 }
 
-function CardContent({ children, className, ...props }: CardProps) {
+function CardContent({
+  children,
+  className,
+  size = "sm",
+  ...props
+}: CardProps) {
   return (
-    <Card {...props} size="sm" className={cn("p-5", className)}>
+    <Card {...props} size={size} className={cn("p-5", className)}>
       {children}
     </Card>
   );

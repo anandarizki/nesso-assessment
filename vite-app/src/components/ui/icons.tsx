@@ -1,4 +1,12 @@
 import { cn } from "@/utils/cn";
+import {
+  Eye,
+  MessageCircle,
+  SearchIcon as SearchIconLucide,
+  Settings2,
+  ThumbsUp,
+  XIcon as XIconLucide,
+} from "lucide-react";
 
 type IconProps = { className?: string };
 function IconArrow({ className }: IconProps) {
@@ -34,8 +42,24 @@ function IconChevronLeft({ className }: IconProps) {
   );
 }
 
+const SearchIcon = SearchIconLucide;
+const XIcon = XIconLucide;
+const CommentIcon = MessageCircle;
+const LikeIcon = ThumbsUp;
+const ViewIcon = Eye;
+const SettingsIcon = Settings2;
 function IconChevronRight({ className }: IconProps) {
   return <IconChevronLeft className={cn("scale-x-[-1]", className)} />;
 }
 
-export { IconArrow, IconChevronLeft, IconChevronRight };
+export {
+  IconArrow,
+  IconChevronLeft,
+  IconChevronRight,
+  SearchIcon,
+  XIcon,
+  CommentIcon,
+  LikeIcon,
+  ViewIcon,
+  SettingsIcon,
+};
