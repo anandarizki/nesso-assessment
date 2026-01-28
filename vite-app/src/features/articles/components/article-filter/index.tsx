@@ -68,6 +68,7 @@ export function ArticleFilterInput({
   const handleToggleCategories = (value: Category) => {
     const categories = filter.categories || [];
     if (categories.length === 1 && categories[0] === value) return;
+
     const updatedValue = !value
       ? []
       : categories.includes(value)
@@ -80,13 +81,14 @@ export function ArticleFilterInput({
   const handleSortBy = (value: string) => {
     if (!value) {
       setFilter({ ...filter, sortBy: undefined, sortOrder: undefined });
-    } else {
-      setFilter({
-        ...filter,
-        sortBy: value as any,
-        sortOrder: value === "date" ? "asc" : "desc",
-      });
+      return;
     }
+
+    setFilter({
+      ...filter,
+      sortBy: value as any,
+      sortOrder: value === "date" ? "asc" : "desc",
+    });
   };
 
   const handleDateFrom = (value: string) => {

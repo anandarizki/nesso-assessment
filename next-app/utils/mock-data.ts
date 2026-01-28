@@ -96,21 +96,21 @@ export const portfolioData = {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident saepe sequi vero rem illum aut sunt sapiente ",
       cta: "Official Showcase 2",
-      image: imageUrl("portfolio-2.png"),
+      image: imageUrl("portfolio-1.png"),
     },
     {
       title: "Showcase 3",
       description:
         "Magni esse animi unde qui sed atque natus vitae repellat itaque, pariatur, aperiam eligendi quam fuga, ",
       cta: "Visit Showcase 3",
-      image: imageUrl("portfolio-3.png"),
+      image: imageUrl("portfolio-1.png"),
     },
     {
       title: "Showcase 4",
       description:
         "Sapiente nihil nemo ipsam placeat iusto, necessitatibus itaque at laboriosam labore ducimus sint porro",
       cta: "Official Showcase 3",
-      image: imageUrl("portfolio-4.png"),
+      image: imageUrl("portfolio-1.png"),
     },
   ],
 };

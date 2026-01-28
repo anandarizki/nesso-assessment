@@ -6,6 +6,18 @@ You are in the `next-app` folder. This folder contains the project that showcase
 
 The page is fully responsive—not just scaled down. Element positions are adjusted to fit mobile devices without removing any content.
 
+### Pagespeed Insight Result
+
+Result: [https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r?form_factor=desktop](https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r?form_factor=desktop)
+
+#### Desktop
+
+![Pagespeed Insight](docs/pagespeed.jpg)
+
+#### Mobile
+
+![Pagespeed Insight Mobile](docs/pagespeed-mobile.jpg)
+
 ## 💻 Installation & Running Locally
 
 ### Prerequisites
@@ -129,18 +141,6 @@ This approach is easier to read because it follows the natural structure of HTML
 Used for scalability and type safety, rather than relying on concatenated class strings. Compared to traditional approaches—such as messy template literals, complex ternary operators, or spaghetti if/else conditions—CVA is much easier to maintain. This becomes especially valuable when a component has multiple combined conditions, such as color, size, and variant.
 
 ## ⚡ Performance, Accessibility, and SEO
-
-### Pagespeed Insight Result
-
-Result: [https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r?form_factor=desktop](https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r?form_factor=desktop)
-
-#### Desktop
-
-![Pagespeed Insight](docs/pagespeed.jpg)
-
-#### Mobile
-
-![Pagespeed Insight Mobile](docs/pagespeed-mobile.jpg)
 
 ### Responsiveness
 
