@@ -4,8 +4,6 @@ You are in the `next-app` folder. This folder contains the project that showcase
 
 **Live demo page: [https://next-app.rizki.id](https://next-app.rizki.id)**
 
-The page is fully responsive—not just scaled down. Element positions are adjusted to fit mobile devices without removing any content.
-
 ### Pagespeed Insight Result
 
 Result: [https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r?form_factor=desktop](https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r?form_factor=desktop)
@@ -54,9 +52,7 @@ http://localhost:3000
 
 ## ⛓️ Constraints
 
-- The page result is based on the Figma design.
-- The original design has some inconsistencies in color codes, spacing, and font sizes.
-- No design changes were made, as the focus of this project is to convert the design into code.
+- I assume the assessment is intended to evaluate how closely the page can be implemented to match the original design. Therefore, even though I may personally disagree with some design decisions, I kept the implementation faithful to the provided design.
 - The Figma design does not provide a small-screen layout, so the mobile version is based on my own judgment.
 
 ## 🛠️ Development Approach
