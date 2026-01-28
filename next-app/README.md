@@ -2,7 +2,7 @@
 
 You are in the `next-app` folder. This folder contains the project that showcases converting a Figma design into frontend code.
 
-**Live demo page: [https://next-app.rizki.id](https://next-app.rizki.id)**
+**Live demo page: [https://nesso-next.rizki.id](https://nesso-next.rizki.id)**
 
 ### Pagespeed Insight Result
 

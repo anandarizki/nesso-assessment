@@ -2,7 +2,7 @@
 
 You are in the `vite-app` folder. This folder contains the project that showcases converting a Figma design into frontend code.
 
-**Live demo page: [https://vite-app.rizki.id](https://vite-app.rizki.id)**
+**Live demo page: [https://nesso-vite.rizki.id](https://nesso-vite.rizki.id)**
 
 ## About the App
 
