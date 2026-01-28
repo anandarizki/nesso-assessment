@@ -1,16 +1,12 @@
 import { SearchIcon } from "@/components/ui/icons";
-import type { ArticleFilter } from "../types";
-import { articleData, filterArticles } from "../utils";
 import { ArticleThumbnail } from "./article-thumbnail";
 import { Typography } from "@/components/ui/typography";
 import { AnimatePresence, motion } from "motion/react";
+import { useArticles } from "../hooks";
 
-export function ArticleList({
-  filters = { sortBy: "date" },
-}: {
-  filters?: ArticleFilter;
-}) {
-  const filtered = filterArticles(articleData, filters);
+export function ArticleList() {
+  const filtered = useArticles();
+
   return (
     <>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

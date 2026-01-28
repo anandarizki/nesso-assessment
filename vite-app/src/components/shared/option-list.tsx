@@ -1,7 +1,7 @@
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/utils";
 
-export function FilterToggleList({
+export function OptionList({
   title,
   onSelect,
   selected,

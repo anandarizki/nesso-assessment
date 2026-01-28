@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SettingsIcon } from "@/components/ui/icons";
 import { AnimatePresence, motion } from "motion/react";
+import { FilterArticlesCategory } from "./filter-articles-category";
+import { FilterArticlesSortBy } from "./filter-articles-sortby";
+import { FilterArticlesPeriod } from "./filter-articles-period";
 
-export function ArticleSidebar({ children }: { children: React.ReactNode }) {
+export function ArticleFilterMenu() {
   const [showFilterBar, setShowFilterBar] = useState(false);
 
   return (
@@ -32,7 +35,11 @@ export function ArticleSidebar({ children }: { children: React.ReactNode }) {
             className="fixed flex flex-col inset-0 left-auto w-64 bg-background z-50 max-w-full shadow-xl "
           >
             <div className="flex-1 flex overflow-y-auto flex-col gap-5 p-5">
-              {children}
+              <FilterArticlesCategory />
+              <hr className="opacity-20" />
+              <FilterArticlesPeriod />
+              <hr className="opacity-20" />
+              <FilterArticlesSortBy />
             </div>
 
             <div className="border-t border-gray-200 p-5">
