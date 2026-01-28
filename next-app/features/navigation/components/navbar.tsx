@@ -10,8 +10,8 @@ export function NavBar({ className, children, ...props }: NavigationProps) {
   return (
     <nav {...props} className={cn("bg-foreground-100 rounded-full", className)}>
       <ul className="flex text-sm lg:text-base px-6 w-full">
-        {menuItems.map(({ href, label, ...itemProps }) => (
-          <li key={href} className="flex-auto">
+        {menuItems.map(({ href, label, ...itemProps }, index) => (
+          <li key={href + index} className="flex-auto">
             <NavLink
               {...itemProps}
               href={href}

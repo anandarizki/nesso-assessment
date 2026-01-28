@@ -26,8 +26,8 @@ export function Footer() {
         <div className="max-w-75">
           <GroupTitle>Menus</GroupTitle>
           <ul className="columns-2 size-fit space-y-2">
-            {menuItems.map(({ href, label, ...itemProps }) => (
-              <li key={href}>
+            {menuItems.map(({ href, label, ...itemProps }, index) => (
+              <li key={href + index}>
                 <NavLink
                   {...itemProps}
                   href={href}

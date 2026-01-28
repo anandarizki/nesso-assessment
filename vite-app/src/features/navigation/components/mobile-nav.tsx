@@ -62,7 +62,7 @@ export function MobileNav() {
                     initial={{ opacity: 0, translateY: "100%" }}
                     animate={{ opacity: 1, translateY: "0%" }}
                     transition={{ delay: index * 0.08 }}
-                    key={href}
+                    key={href + index}
                   >
                     <NavLink
                       {...itemProps}
