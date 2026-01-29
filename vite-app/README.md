@@ -82,19 +82,14 @@ Below is a high-level overview of the project folder structure. Folder and file 
 
 src/
 ├── pages/                          # Application routes / entry pages
+│   ├── other-page/
+│   ├── other-page/
 │   └── article-page.tsx
 │
 ├── components/                     # Global, feature-agnostic UI components
-│   ├── ui/                         # Atomic UI primitives
-│   │   ├── button.tsx
-│   │   ├── icons.tsx
-│   │   ├── container.tsx
-│   │   └── typography.tsx
-│   └── shared/                     # Reusable composed components
-│       ├── arrow-nav.tsx           # Combines button and icons
-│       └── section-wrapper.tsx     # Combines container and typography
-│
 ├── features/                       # Feature-based (domain-driven) modules
+│   ├── other-feature/
+│   ├── other-feature/
 │   └── article/
 │       ├── components/             # Article-specific UI components
 │       │   ├── article-list.tsx
@@ -113,15 +108,17 @@ src/
 │       └── index.ts                # Public API for the article feature
 │
 └── utils/                          # Global, framework-agnostic utilities
-    ├── cn.ts                       # Tailwind class name merge helper
-    └── date-time.ts                # Date formatting utilities
 ```
+
+> Assumption: This application is treated as a new feature added to an existing landing page. Therefore, existing shared components are not included or shown in the folder structure above.
 
 ### Technical Decisions
 
 #### Jotai for State Management
 
 Jotai is used for its simplicity and flexibility. It provides a minimal API while still being powerful enough to handle all state management requirements in this demo application, without introducing unnecessary complexity.
+
+> **Trade-offs** : Not suitable for complex application
 
 #### TypeScript over JavaScript
 

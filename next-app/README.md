@@ -50,10 +50,12 @@ npm run dev
 http://localhost:3000
 ```
 
-## ⛓️ Constraints
+## ⛓️ Assumptions
 
 - I assume the assessment is intended to evaluate how closely the page can be implemented to match the original design. Therefore, even though I may personally disagree with some design decisions, I kept the implementation faithful to the provided design.
 - The Figma design does not provide a small-screen layout, so the mobile version is based on my own judgment.
+- The icon color defined in the Figma file for the “**Brands that work with us**” section is assumed to represent the hover state.
+- The card with the arrow in the “**I nostri servizi**” section is assumed to indicate a hover interaction.
 
 ## 🛠️ Development Approach
 
@@ -77,30 +79,46 @@ src/
 ├── components/                    # GLOBAL UI (The "Building Blocks")
 │   ├── ui/                        # "Atoms": raw primitives
 │   │   ├── button.tsx
-│   │   ├── icons.tsx
-│   │   ├── container.tsx
-│   │   └── typography.tsx
 │   └── shared/                    # "Molecules": Used across features
-│       ├── arrow-nav.tsx          # Combination of button and icons
 │       └── section-wrapper.tsx    # Combination of container and typography
 │
 ├── features/                      # BUSINESS DOMAINS (The "Meat")
 │   └── portfolio-section/
 │       ├── components/            # "Organisms": Portfolio Section specific UI
-│       │   ├── showcase-item.tsx
 │       │   └── showcase-slider.tsx
 │       └── index.ts               # The Public API for this feature
 │
 └── utils/                         # PURE HELPERS
-    ├── cn.ts                      # Tailwind merge utility
-    └── mock-data.ts
+    └── cn.ts                      # Tailwind merge utility
 ```
+
+> **Trade-offs** : For a simple project, this structure may feel overly complex. However, the benefits become more apparent as the project grows, providing better scalability, clearer boundaries, and easier long-term maintenance.
 
 ### Technical Decisions
 
 #### Tailwind CSS for styling
 
 Not a requirement, but based on the design, Tailwind felt like the most efficient choice. The layout is relatively generic, allowing me to move quickly while keeping styles consistent. Styling lives close to the markup, so there’s no need to jump between files. During implementation, some inconsistencies in font styles, spacing, and color usage in the design slowed things down slightly compared to usual.
+
+> **Trade-offs** : Using Tailwind CSS can result in verbose HTML, both in .tsx files and when inspecting the markup in the browser. Additionally, when the design is inconsistent, it often requires creating custom utilities or hardcoded values, which can reduce clarity and reusability..
+
+#### Theme Tokens
+
+Theme tokens are defined as CSS variables in global.css. This approach ensures consistency across the application, enables faster styling iteration, and provides a single source of truth for colors and design values.
+
+```css
+:root {
+  --background: #ffffff;
+  --foreground-100: #f1f1f1;
+  --foreground-200: #f6f6f6;
+  --foreground-300: #8e8e8e;
+  --foreground-400: #636363;
+  --foreground: #434343;
+  --foreground-900: #2f3042;
+  --accent: #0b5ed7;
+  --max: #000;
+}
+```
 
 #### TypeScript over JavaScript
 
@@ -135,6 +153,17 @@ This approach is easier to read because it follows the natural structure of HTML
 #### CVA for Maintainability and Scalability
 
 Used for scalability and type safety, rather than relying on concatenated class strings. Compared to traditional approaches—such as messy template literals, complex ternary operators, or spaghetti if/else conditions—CVA is much easier to maintain. This becomes especially valuable when a component has multiple combined conditions, such as color, size, and variant.
+
+```
+<Button
+  variant="fill"
+  as="a" //Use <a> tag instead of <button>, all valid html tag is allowed
+  theme="gray"
+  size="icon"
+>
+  <IconComponent />
+</Button>
+```
 
 ## ⚡ Performance, Accessibility, and SEO
 

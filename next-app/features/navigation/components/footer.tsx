@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import { NavLink } from "./nav-link";
 import { Typography } from "@/components/ui/typography";
 import { menuItems } from "@/utils/mock-data";
+import { SocialMedia } from "@/components/shared/social-media";
 
 function GroupTitle({ children }: { children: React.ReactNode }) {
   return (
@@ -22,6 +23,7 @@ export function Footer() {
             Costruiamo soluzioni digitali che semplificano il lavoro, un
             progetto alla volta.
           </Typography>
+          <SocialMedia className="mt-6" />
         </div>
         <div className="max-w-75">
           <GroupTitle>Menus</GroupTitle>
