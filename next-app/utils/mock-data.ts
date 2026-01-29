@@ -5,7 +5,7 @@ export const brandList: {
   name: string;
 }[] = [
   {
-    image: imageUrl("brand-samtiv.svg"),
+    image: imageUrl("brand-niscala.svg"),
     name: "Niscala.io",
   },
   {
