@@ -18,11 +18,9 @@ The project focuses on building realistic features that are commonly required in
 
 ### Features
 
-- Real-time search as the user types
-- Filter articles by category
-- Filter articles by time range
-- Sort articles by predefined criteria
-- Combine multiple filters without losing the context of existing active filters or keywords
+- Real-time **search** as the user types
+- **Filter** articles by category and predefined time range
+- **Sort** articles by predefined criteria
 
 ### Constraints
 
