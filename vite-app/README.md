@@ -1,6 +1,6 @@
 # A Simple React(Vite) Application
 
-You are in the `vite-app` folder. This folder contains the project that showcases converting a Figma design into frontend code.
+You are in the `vite-app` folder. This folder contains the project that showcases React / Vite client side mini app.
 
 **Live demo page: [https://nesso-vite.rizki.id](https://nesso-vite.rizki.id)**
 
