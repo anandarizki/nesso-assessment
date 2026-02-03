@@ -140,6 +140,12 @@ To prevent unnecessary computations during typing, a debounce mechanism is appli
 
 ## 🧩 Unit Testing
 
+```bash
+npm run test
+```
+
+> Ensure you are in `vite-app` folder to run the test.
+
 For demonstration purposes, not every file includes unit tests. Testing is focused on the core business logic—specifically the article filtering functionality—where correctness matters most.
 
 Test files follow the file-name.test.ts convention and are colocated with the implementation. This approach is preferred over a separate test directory because it is more practical, easier to maintain, and reduces context switching when navigating the codebase.
