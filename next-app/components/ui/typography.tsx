@@ -68,7 +68,6 @@ function Typography<E extends React.ElementType = "p">(
 
   return (
     <Component
-      data-slot="p"
       className={cn(
         typographyVariant({ variant, size, color, weight, className }),
       )}

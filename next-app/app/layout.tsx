@@ -7,7 +7,19 @@ export const metadata: Metadata = {
   title: "Software su misura per imprese & Sviluppatori on-demand",
   description:
     "Soluzioni digitali personalizzate e developer selezionati ottimizzano i processi e fanno crescere il team IT con un referente tecnico italiano.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
+    type: "website",
     title: "Nesso Digitale",
     description:
       "Soluzioni digitali personalizzate e developer selezionati ottimizzano i processi e fanno crescere il team IT con un referente tecnico italiano.",

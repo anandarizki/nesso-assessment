@@ -4,7 +4,23 @@ You are in the `next-app` folder. This folder contains the project that showcase
 
 **Live demo page: [https://nesso-next.rizki.id](https://nesso-next.rizki.id)**
 
-### Pagespeed Insight Result
+## Table of Contents
+
+- [Pagespeed Insight Result](#pagespeed-insight-result)
+- [Installation and Running Locally](#installation-and-running-locally)
+- [Assumptions](#assumptions)
+- [Development Approach](#development-approach)
+  - [File Structure and Atomic Design](#file-structure-and-atomic-design)
+  - [Technical Decision](#technical-decisions)
+- [Performance, Accessibility, and SEO](#performance-accessibility-and-seo)
+  - [Performance Strategy](#performance-strategy)
+  - [Accessibility Strategy](#accessibility-strategy)
+  - [SEO](#seo)
+- [Responsiveness](#responsiveness)
+- [Interactive Components](#interactive-components)
+- [What I would do with more time](#what-i-would-do-with-more-time)
+
+## Pagespeed Insight Result
 
 Result: [https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r?form_factor=desktop](https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r?form_factor=desktop)
 
@@ -16,7 +32,7 @@ Result: [https://pagespeed.web.dev/analysis/https-nesso-next-rizki-id/u32bj3sg2r
 
 ![Pagespeed Insight Mobile](docs/pagespeed-mobile.jpg)
 
-## 💻 Installation & Running Locally
+## Installation and Running Locally
 
 ### Prerequisites
 
@@ -50,14 +66,14 @@ npm run dev
 http://localhost:3000
 ```
 
-## ⛓️ Assumptions
+## Assumptions
 
 - I assume the assessment is intended to evaluate how closely the page can be implemented to match the original design. Therefore, even though I may personally disagree with some design decisions, I kept the implementation faithful to the provided design.
 - The Figma design does not provide a small-screen layout, so the mobile version is based on my own judgment.
 - The icon color defined in the Figma file for the “**Brands that work with us**” section is assumed to represent the hover state.
 - The card with the arrow in the “**I nostri servizi**” section is assumed to indicate a hover interaction.
 
-## 🛠️ Development Approach
+## Development Approach
 
 ### File Structure and Atomic Design
 
@@ -165,39 +181,91 @@ Used for scalability and type safety, rather than relying on concatenated class 
 </Button>
 ```
 
-## ⚡ Performance, Accessibility, and SEO
+## Performance, Accessibility, and SEO
+
+### Performance Strategy
+
+| Aspect                         | Implementation                                                                                                                                                                       |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Fast Page Rendering**        | Server-side rendering (SSR) is prioritized to take full advantage of Next.js, improving initial load time and SEO.                                                                   |
+| **Image & Asset Optimization** | Use `next/image`, define proper width and height attributes, prefer WebP for faster loading, and implement lazy loading.                                                             |
+| **Font Rendering**             | Use next/font to enable proper font preloading and prevent FOUT (Flash of Unstyled Text) on initial load.                                                                            |
+| **DOM Structure Complexity**   | Keep the HTML hierarchy as simple as possible and avoid excessive nesting.                                                                                                           |
+| **Hydration Performance**      | Avoid unnecessary client-side hydration by limiting interactive components to where they are truly needed. Interactive components needed: Mobile Menu, Hero Section, Portfolio Slide |
+
+### Accessibility Strategy
+
+- **ARIA attributes** (such as aria-label and aria-controls) are added only when necessary. Not all elements require ARIA—native semantic HTML already provides accessibility information, and overusing ARIA can be redundant or even harmful to assistive technologies.
+- **Single, clear `<h1>`**. There is a single primary heading that represents the page topic which in the Hero Section.
+- **No skipped heading levels**. `h2` section title, `h3` for the title inside section, and `h4` for footer menu title.
+- **Screen readers read content in a meaningful sequence** by ensuring logical DOM order matches visual order, such as in Hero Section where text content appears before decorative images in the DOM. CSS is used to rearrange layout, not DOM manipulation.
+- **Keyboard navigation follows user expectations**, when user press `tab` keyboard, the link highlight so have correct sequence, from top to bottom.
+- **No focus traps or unreachable elements** by ensuring no elements visually present but removed from the accessibility tree
+
+### SEO Strategy
+
+| Element           | Implementation                                                                                                                                                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Page Metadata** | Use proper `Metadata` attribute in `layout.tsx`. While many metadata attributes exist — such as `publisher`, `creator`, and `author` — for a landing page, the `title` and `description` tags are sufficient unless the page is intended for article-style content. |
+| **Open Graph**    | Ensure the thumbnail image uses the correct size and dimensions. In this implementation, a 1200 × 630 image with a compressed file size is sufficient to ensure proper display across major social media platforms when shared.                                     |
+
+Modern search engines are more advanced. They evaluate performance primarily based on the HTML structure, such as semantic markup, document hierarchy, and content order.
 
 ### Responsiveness
 
-Responsiveness is handled not only by shrinking component sizes, but also by rearranging element positions without removing any content. This is managed entirely with CSS rather than conditional logic in React, resulting in cleaner code and better performance.
+A **mobile-first approach** is applied. Responsiveness is handled not only by shrinking component sizes, but also by rearranging element positions without removing any content. This is managed entirely with CSS rather than conditional logic in React, resulting in cleaner code and better performance.
 
-### Performance & Rendering
+| Element                                   | Small Screen                                                                                                                         | Medium Screen                                              | Large Screen                                       |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | -------------------------------------------------- |
+| **Header**                                | Keep logo, add hamburger menu and move navigation bar and contact cta to popup                                                       | Follow design with shrink navigation                       | Follow design                                      |
+| **Footer**                                | 1 column                                                                                                                             | 3 columns                                                  | 3 columns                                          |
+| **Hero Section**                          | Preserve element order, ensure no elements are cut off within the viewport, move the image downward, and prioritize the text and CTA | Follow the design with a scaled-down image                 | Follow the design                                  |
+| **General Section Title and Description** | 1 column                                                                                                                             | 2 columns                                                  | 2 columns (follow the design)                      |
+| **About Section**                         | 1 column                                                                                                                             | 2 columns                                                  | 2 columns (follow the design)                      |
+| **Services Section**                      | 1 column                                                                                                                             | 2 columns                                                  | 2 columns (follow the design)                      |
+| **About Section**                         | 1 column                                                                                                                             | 2 columns                                                  | 2 columns (follow the design)                      |
+| **Portfolio Section**                     | 1 column, image on the top                                                                                                           | 2 columns, image on the right side                         | 2 columns (follow the design)                      |
+| **Transformation Action Section**         | 1 column, image on the top                                                                                                           | 1 columns image on the top, 3 columns text below the image | 3 columns, image in the center (follow the design) |
+| **Transformation Step Section**           | 1 column, 2 columns thumbnail (left image, right text)                                                                               | 3 columns shrink (follow the design)                       | 3 columns (follow the design)                      |
+| **Collaboration Section**                 | 1 column                                                                                                                             | 1 column                                                   | 1 column (follow the design)                       |
 
-Server-side rendering (SSR) is prioritized to take full advantage of Next.js, improving initial load time and SEO.
-
-### Semantic HTML & SEO
-
-HTML elements are used according to their purpose: h1 for the main title, h2 for section titles, and h3 for titles within sections. This preserves a clear and logical information hierarchy for both users and search engines.
-
-### Image Optimization
-
-Images are properly resized and provided with appropriate size attributes. Since images are often the largest performance bottleneck, this significantly improves page loading speed.
-
-### Accessibility (ARIA usage)
-
-ARIA attributes (such as aria-label and aria-controls) are added only when necessary. Not all elements require ARIA—native semantic HTML already provides accessibility information, and overusing ARIA can be redundant or even harmful to assistive technologies.
-
-## 🧩 Interactive Component
+## Interactive Components
 
 - Mobile navigation
 - Slider in the showcase section
 
-## ⏳ What I would do with more time
+## What I would do with more time
+
+#### Scalability and Reusability
 
 - Create **[Storybook](https://storybook.js.org/)** for component documentation and isolation, making components easier to scale and maintain in the future
-- Add scroll-based animations to make the page feel more interactive
-- Add error handling and user feedback when an image fails to load
-- Add an option to switch between dark and light mode
-- Refine the design with a designer, as font sizes, spacing, and color codes are inconsistent across sections
+- Add End-to-End (E2E) testing to ensure changes and refactors do not introduce regressions across critical user flows.
+
+#### User Experience
+
+- Add scroll-based animations to enhance visual engagement while keeping performance impact minimal.
+- Provide an option to switch between dark and light modes to improve accessibility and user preference support.
+- Refine the visual design in collaboration with a designer, as font sizes, spacing, and color usage are currently inconsistent across sections.
+
+#### Error Handling
+
+- Implement error handling and user feedback for image loading failures, such as fallback images or contextual messages.
+- Provide static, non-interactive feedback for environments where JavaScript is unavailable or interactivity is not supported.
+
+#### SEO
+
+- Add structured data (Schema.org) to improve search engine understanding, including:
+  - Organization schema
+  - Professional Service schema
+  - Website schema
+  - Navigation / Sitelinks schema
+  - Breadcrumb schema
+  - Social profile and contact information schemas
+
+#### CMS-Related Placeholders
+
+- Add mocks and abstractions such as data-fetching services, internationalization (i18n), and content models.
+- Prepare placeholders for CMS-driven features like dynamic pages, content collections, SEO fields, and media assets.
+- Define clear data contracts and fallback content so the template is ready to integrate with a backend or CMS without structural changes.
 
 > AI was used to help with minor vocabulary improvements while writing this README. All technical decisions and content are based on my own understanding and implementation of the project.

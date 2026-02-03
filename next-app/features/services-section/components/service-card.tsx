@@ -16,6 +16,7 @@ export function ServiceCard({ href, title, children }: ServiceCardProps) {
         <CardHeader>
           <Typography
             size="xl"
+            as="h2"
             color="max"
             weight="medium"
             className="transition-all group-hover:font-bold"

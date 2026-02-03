@@ -7,7 +7,7 @@ import { SocialMedia } from "@/components/shared/social-media";
 
 function GroupTitle({ children }: { children: React.ReactNode }) {
   return (
-    <Typography weight="bold" color="deep" size="md" className="mb-3">
+    <Typography as="h4" weight="bold" color="deep" size="md" className="mb-3">
       {children}
     </Typography>
   );

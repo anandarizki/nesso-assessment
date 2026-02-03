@@ -52,7 +52,6 @@ function Button<E extends React.ElementType = "button">(
 
   return (
     <Component
-      data-slot="button"
       className={cn(buttonVariants({ variant, size, theme, className }))}
       {...rest}
     />
